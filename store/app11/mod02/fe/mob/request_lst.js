@@ -1,14 +1,14 @@
 _cp = _app.curr_page
 
 _cp.init = function(){
-	_cp.views.page = './app11/fe/mod02/mob/request_lst.htm';
-	_cp.api.list = '/app03/api/mod02/ang_pg/';
+	_cp.views.page = './fe/app11/mod02/mob/request_lst.htm';
+	// _cp.api.list = '/app03/api/mod02/ang_pg/';
 	
 	//Render the page.
 	_cp.render_page(_cp.views.page,'');
 
 	//Call the filter to get the data.
-	_cp.on.filter_list();
+	// _cp.on.filter_list();
 
 	//Bind events for add and search. 
 	//NOTE : Events for edit and delete are defined in their respective onclick events in the view.
@@ -17,12 +17,12 @@ _cp.init = function(){
 
 _cp.on.filter_list = function(){
 	// _filter = ''
-	let _filter = '?hub=' + _app.curr_ses.user.hub_id;
-	_app.get(_cp.api.list + _filter, function( data ) {	
-		_app.log(data);	
-		_cp.render_view(_cp.views.tableView,data, 'x-requests');
+	// let _filter = '?hub=' + _app.curr_ses.user.hub_id;
+	// _app.get(_cp.api.list + _filter, function( data ) {	
+		// _app.log(data);	
+		_cp.render_view(_cp.views.tableView, 'x-requests');
 		_cp.table = _cp.display_table('#tbl_requests');					
-	});	
+	// });	
 }
 
 //ADD

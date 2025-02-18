@@ -1,6 +1,6 @@
 _cp = _app.curr_page
 _cp.init = function() {
-  _cp.views.page = './app11/fe/main/web/login.htm';
+  _cp.views.page = './fe/app11/web/login.htm';
   
 	//
 	//_app.curr_ses.ten.org

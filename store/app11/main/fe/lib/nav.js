@@ -1,11 +1,11 @@
 let navMap = {
-  "store.usr_login": "/app11/fe/main/web/login.js",
+  "store.usr_login": "/fe/app11/web/login.js",
 
   "store.activity_lst": "/app11/fe/mod01/web/activity/activity_lst.js",
   "store.activity_dtl": "/app11/fe/mod01/web/activity/activity_dtl.js",
   "store.staff_lst": "/app11/fe/mod01/web/staff/staff_lst.js",
   "store.staff_dtl": "/app11/fe/mod01/web/staff/staff_dtl.js",
-  "store.location_lst": "/app11/fe/mod01/web/location/location_lst.js",
+  "store.location_lst": "/fe/app11/mod01/web/location/location_lst.js",
   "store.location_dtl": "/app11/fe/mod01/web/location/location_dtl.js",
   "store.farmer_lst": "/app11/fe/mod01/web/view/farmer_lst.js",
   "store.farmer_dtl": "/app11/fe/mod01/web/view/farmer_dtl.js",

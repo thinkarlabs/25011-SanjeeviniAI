@@ -26,7 +26,7 @@ function launch(pg,win){
 }
 
 
-_cp = _app.load_page('store.usr_login','')
+_cp = _app.load_page('store.location_lst','')
 // _cp = _app.load_page('store.location_lst','')
 
 history.replaceState({}, null, "/app11/");

@@ -2,7 +2,7 @@ _cp = _app.curr_page
 
 _cp.init = function(){
 	//Define the page URL and the base API
-	_cp.views.page = './app11/fe/mod01/web/location/location_lst.htm';	
+	_cp.views.page = './fe/app11/mod01/web/location/location_lst.htm';	
 	// _cp.api.list = '/app03/api/mod01/program/';
 
 	//Render the page.

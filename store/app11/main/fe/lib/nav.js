@@ -27,7 +27,7 @@ let navMap = {
   
   "mob.farmer_lst": "/app11/fe/mod02/mob/farmer_lst.js",
   "mob.farmer_dtl": "/app11/fe/mod02/mob/farmer_dtl.js",
-  "mob.request_lst": "/app11/fe/mod02/mob/request_lst.js",
+  "mob.request_lst": "/fe/app11/mod02/mob/request_lst.js",
   "mob.request_dtl": "/app11/fe/mod02/mob/request_dtl.js",
   "mob.cattle_lst": "/app11/fe/mod02/mob/cattle_lst.js",
   "mob.cattle_dtl": "/app11/fe/mod02/mob/cattle_dtl.js",

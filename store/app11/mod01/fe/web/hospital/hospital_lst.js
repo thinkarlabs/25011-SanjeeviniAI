@@ -9,7 +9,7 @@ _cp.init = function(){
 	_cp.render_page(_cp.views.page,'');	
 	
 	//Call the filter to get the data.
-	 // _cp.on.filter_list();	
+	 _cp.on.filter_list();	
 
 	//Bind events for add and search. 
 	//NOTE : Events for edit and delete are defined in their respective onclick events in the view.
@@ -19,12 +19,12 @@ _cp.init = function(){
 
 _cp.on.filter_list = function(){
 	// _filter = ''
-	// _filter = '?hub=' + _app.curr_ses.user.hub_id
-	// _app.get(_cp.api.list + _filter, function( data ) {	
-		// _app.log(data);	
+	_filter = '?hub=' + _app.curr_ses.user.hub_id
+	_app.get(_cp.api.list + _filter, function( data ) {	
+		_app.log(data);	
 			_cp.render_view(_cp.views.tableView,data, 'x-hospitals');
 			_cp.table = _cp.display_table('#tbl_hospitals');							
-	// });	
+	});	
 }
 
 //ADD

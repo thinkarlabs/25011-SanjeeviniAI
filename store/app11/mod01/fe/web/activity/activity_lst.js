@@ -18,17 +18,14 @@ _cp.init = function(){
 }
 
 _cp.on.filter_list = function(){
-	
-	_cp.render_view(_cp.views.tableView, 'x-activity');
-	_cp.table = _cp.display_table('#tbl_activity');
-	
-	// _app.get(_cp.api.list + _filter, function( data ) {	
-		// _app.log(data);	 
-			// _cp.render_view(_cp.views.tableView, 'x-activity');
-			// _cp.table = _cp.display_table('#tbl_activity');							
-	// });	
+	// _filter = ''
+	_filter = '?hub=' + _app.curr_ses.user.hub_id
+	_app.get(_cp.api.list + _filter, function( data ) {	
+		_app.log(data);	
+			_cp.render_view(_cp.views.tableView,data, 'x-activity');
+			_cp.table = _cp.display_table('#tbl_activity');							
+	});	
 }
-
 
 //ADD
 _cp.on.Add = function(){

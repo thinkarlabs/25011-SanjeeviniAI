@@ -24,7 +24,7 @@ def get_device(request):
     
 @x_app.get("/SanjeeviniAI")
 async def read_SanjeeviniAI(request: Request):
-    fname = "store/app11/main/fe/web/indexnew.htm"
+    fname = "store/app11/main/fe/web/index.htm"
     return FileResponse(fname)
 
 

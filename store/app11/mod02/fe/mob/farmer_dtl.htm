@@ -1,0 +1,89 @@
+{% extends "app11/fe/main/lib/base_mob.htm" %}
+
+{% block body %}
+<div id="x-main" class="container-full" style="margin-top: 40px">
+	<div class="card-header d-flex justify-content-between align-items-center" style="height: 60px">
+		<h5 class="ps-2 mb-0">Farmer Detail</h5>
+		<div>
+		  <button type="button" id="btnCancel" class="btn btn-primary btn-sm ms-2">Close</button>
+		  <button type="submit" form="form_donor" id="btnSave" class="btn btn-success btn-sm ms-2">Save</button>
+		</div>
+	  </div>
+
+  <!-- Form Body -->
+  <div class="card-body">
+    <form method="post" id="form_donor">
+      <div class="row g-3">
+        <div class="col-md-6">
+		
+          <label for="assignPersonName" class="form-label">Farmer Name</label>
+          <input type="text" class="form-control" id="assignPersonName" value="{{farmer_name}}" placeholder="Enter farmer name" name="name_donor">
+        </div>
+		
+        <div class="col-md-6">
+          <label for="aadhaarNumber" class="form-label">Aadhaar Number</label>
+          <input type="text" class="form-control" id="aadhaarNumber" value="{{aadhaar_number}}" placeholder="Enter aadhaar number" name="aadhaar_number">
+        </div>
+		
+		<div class="col-md-6">
+          <label for="phone_number" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="phone_number" value="{{phone_number}}" placeholder="Enter the phone number" name="phone_number">
+        </div>
+		
+		<div class="col-md-6">
+          <label for="cattle_count" class="form-label">Count of Cattle</label>
+          <input type="number" class="form-control" id="cattle_count" value="{{cattle_count}}" placeholder="Enter number of cattle" name="cattle_count">
+        </div>
+
+        <div class="col-md-3 mb-3">
+			<label for="pin_code" class="form-label">Pin Code</label>
+			<input type="text" class="form-control" id="pin_code" value="" 
+				placeholder="Enter Pin Code " name="pin_code">
+		</div>
+		
+        <div class="col-md-6">
+          <label for="village" class="form-label">Village</label>
+          <select id="village" class="form-select">
+            <option value="" disabled selected>Select village</option>
+            <option value="greenfodder">Jakkur</option>
+            <option value="dryfodder">Lavale</option>
+            <option value="mineralsupp">Kallar</option>
+            <option value="mineralsupp">Keezhmad</option>
+            <option value="mineralsupp">Pratap Nagar</option>
+          </select>
+        </div>
+        
+        <div class="col-md-6">
+          <label for="fodderTypeSelect" class="form-label">Type of Fodder</label>
+          <select id="fodderTypeSelect" class="form-select">
+            <option value="" disabled selected>Select type of fodder</option>
+            <option value="green fodder">Green Fodder</option>
+            <option value="dry fodder">Dry Fodder</option>
+            <option value="mineral supplements">Mineral Supplements</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="shedType" class="form-label">Type of Shed for Cow or Buffalo</label>
+          <select id="shedType" class="form-select">
+            <option value="" disabled selected>Select shed type</option>
+            <option value="yes">Yes by Cap</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+		
+        <div class="col-md-6 mb-3">
+          <label for="milkProduction" class="form-label">Milk Production</label>
+          <select id="milkProduction" class="form-select">
+            <option value="" disabled selected>Select milk production range</option>
+            <option value="lt2">Less than 2 liters</option>
+            <option value="bt3-5">Between 3 to 5 liters</option>
+            <option value="gt5">More than 5 liters</option>
+          </select>
+        </div>
+		
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

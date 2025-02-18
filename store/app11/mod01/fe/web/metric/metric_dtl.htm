@@ -1,0 +1,48 @@
+{% extends "app11/fe/main/lib/admin_base.htm" %}
+
+{% block body %}
+<div id='x-main' class="container-full" style="margin-top:40px">
+  
+    <!-- Card Header -->
+    <div class="card-header d-flex justify-content-between align-items-center" style="height:45px">
+        <h5 class="m-0">Metrics Detail</h5>
+        <div>
+            <button type="button" id="btnCancel" class="btn btn-primary btn-sm">Close</button>
+            <button type="button" id="btnSave" class="btn btn-success btn-sm ms-2">Save</button>
+        </div>
+    </div>
+
+    <!-- Card Body -->
+    <div class="card-body">
+        <form method="post" id="form_staff">
+           
+
+            <!-- Form Fields -->
+            <div class="row">
+                <!-- Start Date -->
+                <div class="col-md-3 mb-3">
+                    <label for="startDate" class="form-label">Metric Name</label>
+                    <input type="text" class="form-control" id="metricname" value="{{metric_name}}" name="metric_name" placeholder="Enter the metric name ">
+                </div>
+
+                <!-- End Date -->
+                <div class="col-4">
+					<label for="mettargetvalue" class="form-label">Planned Value</label>
+					<input type="number" class="form-control" id="mettargetvalue" name="met_target_value" required>     		
+				</div>
+				
+			<div class="col-4">
+				<label for="mettargetunit" class="form-label">Metric Unit</label>
+				<input type="text" class="form-control" id="mettargetunit" name="met_target_unit">
+			</div>
+			
+			<div class="col-4">
+			  <label for="metactualvalue" class="form-label">Actual Value</label>
+			  <input type="number" class="form-control" id="metactualvalue" name="met_actual_value" placeholder="">
+			</div>
+						
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

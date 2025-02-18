@@ -1,0 +1,75 @@
+{% extends "app11/fe/main/lib/admin_base.htm" %}
+
+{% block body %}
+<div id="x-main" class="container-full" style="margin-top:40px">
+  
+  <div class="card-header" style="height:45px">
+    <h5 class="float-start ps-2">Followup Detail</h5>
+    <button type="button" id="btnCancel" class="btn btn-primary btn-sm float-end ms-2">Close</button>
+    <!-- <button type="button" id="btnSave" class="btn btn-success btn-sm float-end ms-2">Save</button> -->
+  </div>
+
+  <div class="card-body">
+    <form method="post" id="cattle_form">
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <div class="card p-4" style="background-color: #f9f9f9; border: 1px solid #ddd;">
+            <p class="mb-1" style="color: #333;">
+              <strong>Phone:</strong> 9876543210 <br>
+              <strong>Farmer Name:</strong> Sunil Patel <br>
+              <strong>Request Date:</strong> 14-08-2002 <br>
+			  <strong>Pin Code:</strong> 560064<br>
+              <strong>Village Name:</strong> Jakkur
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <div class="card p-4" style="background-color: #f9f9f9; border: 1px solid #ddd;">
+            <p class="mb-1" style="color: #333;">
+              <strong>Visit Date:</strong> 15-08-2022 <br>
+              <strong>Cattle Tag Number:</strong> CT00123 <br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="ai_status">AI Status</label>
+          <input type="text" class="form-control" name="ai_status" value="Completed" readonly>
+        </div>
+        
+        <!-- Pregnancy Status and Pregnancy Date (in one row) -->
+        <div class="col-md-6">
+          <label for="preg_status">Pregnancy Status</label>
+          <input type="text" class="form-control" name="preg_status" value="Pregnant" readonly>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="preg_date">Pregnancy Date</label>
+          <input type="date" class="form-control" value="2025-01-12" name="preg_date" readonly>
+        </div>
+
+        <!-- Birth Status and Birth Date (in one row) -->
+        <div class="col-md-6">
+          <label for="birth_status">Birth Status</label>
+          <input type="text" class="form-control" name="birth_status" value="Scheduled" readonly>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="birth_date">Birth Date</label>
+          <input type="date" class="form-control" value="2025-02-01" name="birth_date" readonly>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+{% endblock %}

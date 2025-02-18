@@ -1,0 +1,73 @@
+_cp = _app.curr_page;
+
+_cp.init = function () {
+    _cp.views.page = './app11/fe/mod01/web/summaryreport/summary_lst.htm';
+    _cp.api.list = '/app03/api/mod01/anganwadi/';
+
+    _cp.render_page(_cp.views.page, '');
+    _cp.render_summary();
+    _cp.on.filter_list();
+
+    _app.bind_event('#btnAdd', 'click', _cp.on.Add);
+    _app.bind_event('#searchhospitals', 'keyup', _cp.on.Search);
+};
+
+_cp.render_summary = function () {
+    let summaryHTML = `
+        <div class="container mt-4">
+            <div class="row g-3">
+                ${_cp.create_card("AI Insemination by Location", "bi-geo-alt-fill", "ai-location", "primary")}
+                ${_cp.create_card("AI Insemination by MAITRI Worker", "bi-person-badge", "ai-worker", "success")}
+                ${_cp.create_card("AI Insemination by Month", "bi-calendar3", "ai-month", "warning")}
+            </div>
+        </div>
+    `;
+    document.getElementById('x-summaryreports').insertAdjacentHTML('beforebegin', summaryHTML);
+    _cp.fetch_ai_data();
+};
+
+// Function to Create Uniform Cards
+_cp.create_card = function (title, icon, id, color) {
+    return `
+        <div class="col-md-4">
+            <div class="card shadow-lg text-center p-3 border-${color}" style="height: 180px;">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <i class="bi ${icon} text-${color} fs-1"></i>
+                    <h6 class="mt-2">${title}</h6>
+                    <h3 class="text-${color} fw-bold" id="${id}">Loading...</h3>
+                </div>
+            </div>
+        </div>
+    `;
+};
+
+// Fetch AI Insemination Data
+_cp.fetch_ai_data = function () {
+    let _filter = '?hub=' + _app.curr_ses.user.hub_id;
+    _app.get(_cp.api.list + 'ai_insemination_summary' + _filter, function (data) {
+        document.getElementById('ai-location').innerText = data.by_location || "0";
+        document.getElementById('ai-worker').innerText = data.by_worker || "0";
+        document.getElementById('ai-month').innerText = data.by_month || "0";
+    });
+};
+
+// Fetch AI Detail Reports
+_cp.on.filter_list = function () {
+    let _filter = '?hub=' + _app.curr_ses.user.hub_id;
+    _app.get(_cp.api.list + _filter, function (data) {
+        _app.log(data);
+        _cp.render_view(_cp.views.tableView, data, 'x-summaryreports');
+        _cp.table = _cp.display_table('#tbl_summaryreports');
+    });
+};
+
+// Event Handlers
+_cp.on.Add = () => (_app.nav_page('store.activityreport_dtl'), false);
+_cp.on.Edit = () => (_app.nav_page('store.activityreport_dtl'), false);
+_cp.on.Delete = (id) => (_app.del(_cp.api.list + id, () => _cp.init()), false);
+_cp.on.Search = function () {
+    _cp.table.search(this.value).draw();
+    return false;
+};
+
+_cp.init();

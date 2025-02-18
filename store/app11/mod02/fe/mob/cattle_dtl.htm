@@ -1,0 +1,61 @@
+{% extends "app11/fe/main/lib/base_mob.htm" %}
+
+{% block body %}
+<div id='x-main' class="container-full" style="margin-top:40px">
+ 
+  <div class="card-header d-flex justify-content-between align-items-center" style="height: 60px">
+    <h5 class="ps-2 mb-0">Cattle Detail</h5>
+    <div>
+      <button type="button" id="btnCancel" class="btn btn-primary btn-sm ms-2">Close</button>
+      <button type="submit" form="form_donor" id="btnSave" class="btn btn-success btn-sm ms-2">Save</button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <form method="post" id="cattle_form">
+
+      <!-- Farmer Name -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="farmer_name" class="form-label">Farmer Name</label>
+          <select class="form-select" name="farmer" id="farmer_name">
+            <option value="" disabled selected>Select farmer Name</option>
+            <option value="ajay" {% if farmer == "ajay" %}selected{% endif %}>Ajay Kumar</option>
+            <option value="sunil" {% if farmer == "sunil" %}selected{% endif %}>Sunil Patel</option>
+            <option value="meera" {% if farmer == "meera" %}selected{% endif %}>Meera Singh</option>
+            <option value="rajesh" {% if farmer == "rajesh" %}selected{% endif %}>Rajesh Sharma</option>
+            <option value="lalita" {% if farmer == "lalita" %}selected{% endif %}>Lalita Devi</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Cattle Type and Cattle Title (Fixed Spacing) -->
+      <div class="row g-3 mb-3"> 
+        <div class="col-md-6">
+          <label for="cattle_type" class="form-label">Cattle Type</label>
+          <select class="form-select" name="cattle_type">
+            <option value="">Select cattle type</option>
+            <option value="cow" {% if cattle_type == 'cow' %}selected{% endif %}>Cow</option>
+            <option value="buffalo" {% if cattle_type == 'buffalo' %}selected{% endif %}>Buffalo</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="cattle_title" class="form-label">Cattle Title</label>
+          <input type="text" class="form-control" value="{{cattle_title}}" name="cattle_title" placeholder="Enter the cattle title">
+        </div>
+      </div>
+
+      <!-- Cattle Tag Number -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="cattle_tag_number" class="form-label">Cattle Tag Number</label>
+          <input type="number" class="form-control" value="{{cattle_tag_number}}" name="cattle_tag_number" placeholder="Enter the cattle tag number">
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+{% endblock %}

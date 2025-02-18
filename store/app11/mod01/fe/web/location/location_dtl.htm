@@ -1,0 +1,97 @@
+{% extends "app11/fe/main/lib/admin_base.htm" %}
+
+{% block body %}
+<div id="x-main" class="container-full" style="margin-top:40px">
+    <!-- Header Section -->
+    <div class="card-header d-flex justify-content-between align-items-center" style="height:45px">
+        <h5 class="ps-2 mb-0">Location Detail</h5>
+        <div>
+            <button type="button" class="btn btn-primary btn-sm" id="btnCancel">Close</button>
+            <button type="submit" id="btnSave" class="btn btn-success btn-sm ms-2">Save</button>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="card-body">
+        <form method="post" id="form_location">
+            <!-- Hidden Field for Hub ID -->
+            <input type="hidden" class="form-control" value="{{ses.user.hub_id}}" name="hub_id">
+
+            <div class="row">
+                
+
+			<div class="col-md-3">
+			  <label for="country" class="form-label">Country</label>
+			  <x-select id="country" class="form-select" 
+				x-value-id="{{country_id}}" x-value-disp="{{country}}" 
+				x-name-id="country_id" x-name-disp="country">
+				<option value="" disabled selected>Select Country</option>
+				<option value="India">India</option>
+				<!-- <option value="mineralsupp">Mineral Supplements</option> -->
+			  </x-select>
+			</div>
+                <!-- State Dropdown -->
+                
+
+			<div class="col-md-3">
+			  <label for="state" class="form-label">State</label>
+			  <x-select id="state" class="form-select" 
+				x-value-id="{{state_id}}" x-value-disp="{{state}}" 
+				x-name-id="state_id" x-name-disp="state">
+				<option value="" >Select State</option>
+				<option value="Karnataka">Karnataka</option>
+				<option value="Maharashtra">Maharashtra</option>
+				<option value="tamilnadu">Tamil Nadu</option>
+				<option value="Kerala">Kerala</option>
+				<option value="Rajasthan">Rajasthan</option>
+				<!-- <option value="mineralsupp">Mineral Supplements</option> -->
+			  </x-select>
+			</div>
+               
+			<div class="col-md-3">
+			  <label for="district" class="form-label">District</label>
+			  <x-select id="district" class="form-select" 
+				x-value-id="{{district_id}}" x-value-disp="{{district}}" 
+				x-name-id="district_id" x-name-disp="district">
+				<option value="">Select District</option>
+				<option value="Bangalore">Bangalore</option>
+				<option value="Pune">Pune</option>
+				<option value="Coimbatore">Coimbatore</option>
+				<option value="Ernakulam">Ernakulam</option>
+				<option value="Jaipur">Jaipur</option>
+				<!-- <option value="mineralsupp">Mineral Supplements</option> -->
+			  </x-select>
+			</div>
+                
+
+         <div class="col-md-3">
+			  <label for="taluk" class="form-label">Taluk</label>
+			  <x-select id="taluk" class="form-select" 
+				x-value-id="{{taluk_id}}" x-value-disp="{{taluk}}" 
+				x-name-id="taluk_id" x-name-disp="taluk">
+				<option value="">Select Taluk</option>
+				<option value="Yelahanka">Yelahanka</option>
+				<option value="Mulshi">Mulshi</option>
+				<option value="Mettupalayam">Mettupalayam</option>
+				<option value="Aluva">Aluva</option>
+				<option value="Sanganer">Sanganer</option>
+				<!-- <option value="mineralsupp">Mineral Supplements</option> -->
+			  </x-select>
+			</div>
+			
+                <!-- Village Input Field -->
+                <div class="col-3 mb-3">
+                    <label for="village">Village</label>
+                    <input type="text" class="form-control" id="village" name="village" placeholder="Enter Village Name" value="{{village}}">
+                </div>
+
+                <!-- Pincode Input Field -->
+                <div class="col-3 mb-3">
+                    <label for="pincode">Pin Code</label>
+                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter Pincode" value="{{pincode}}" required>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

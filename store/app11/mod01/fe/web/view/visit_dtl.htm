@@ -1,0 +1,70 @@
+{% extends "app11/fe/main/lib/admin_base.htm" %}
+
+{% block body %}
+<div id="x-main" class="container-full" style="margin-top:40px"> 
+   <div class="card-header d-flex justify-content-between align-items-center" style="height:45px">
+    <h5 class="ps-2 mb-0">Visit Detail</h5>
+    <div>
+      <button type="button" id="btnCancel" class="btn btn-primary btn-sm ms-2">Close</button>
+	  <!-- <button type="submit" id="btnSave" class="btn btn-success btn-sm ms-2">Save</button> -->
+    </div>
+  </div>
+
+  <div class="card-body">
+    <form method="post" id="visit_form">
+
+      <!-- Visit Information Card -->
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <div class="card p-4" style="background-color: #f9f9f9; border: 1px solid #ddd;">
+            <p class="mb-1" style="color: #333;">
+              <strong>Phone:</strong> 9876543210 <br>
+              <strong>Farmer Name:</strong> Sunil Patel <br>
+              <strong>Request Date:</strong> 14-08-2022 <br>
+			  <strong>Pin Code:</strong> 560064<br>
+              <strong>Village Name:</strong> Jakkur
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cattle Details with Two Input Fields per Row -->
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="vet_hospital" class="form-label">Veterinary Hospital</label>
+          <input type="text" class="form-control" id="vet_hospital" name="vet_hospital" value="Govt Vet Clinic" readonly>
+        </div>
+        <div class="col-md-6">
+          <label for="cattle_owner_name" class="form-label">Cattle Title</label>
+          <input type="text" class="form-control" name="cattle_owner_name" id="cattle_owner_name" value="Cattle Title 1" readonly>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="cattle_type" class="form-label">Sperm Type</label>
+          <input type="text" id="cattle_type" class="form-control" name="cattle_type" value="HF" readonly>
+        </div>
+        <div class="col-md-6">
+          <label for="sperm_type" class="form-label">Sperm Tube ID</label>
+          <input type="text" id="sperm_type" class="form-control" name="sperm_type" value="ST001" readonly>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="visit_date" class="form-label">Visit Date</label>
+          <input type="text" class="form-control" id="visit_id" name="visit_date" value="16-08-2022" readonly>
+        </div>
+        <!-- <div class="col-md-6"> -->
+          <!-- <label for="todayDate" class="form-label">Visit Date</label> -->
+          <!-- <input type="date" class="form-control" id="todayDate" name="today_date" value="16-08-2022" readonly> -->
+        <!-- </div> -->
+      </div>
+	  
+	<div>
+
+    </form>
+  </div>
+</div>
+{% endblock %}

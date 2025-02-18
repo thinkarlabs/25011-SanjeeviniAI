@@ -1,0 +1,110 @@
+{% extends "app11/fe/main/lib/admin_base.htm" %}
+
+{% block body %}
+<div id='x-main' class="container-full" style="margin-top:40px">
+  
+    <!-- Card Header -->
+    <div class="card-header d-flex justify-content-between align-items-center" style="height:45px">
+        <h5 class="m-0">Activities Detail</h5>
+        <div>
+            <button type="button" id="btnCancel" class="btn btn-primary btn-sm">Close</button>
+            <button type="button" id="btnSave" class="btn btn-success btn-sm ms-2">Save</button>
+        </div>
+    </div>
+
+    <!-- Card Body -->
+    <div class="card-body">
+        <form method="post" id="form_staff">
+           
+
+            <!-- Form Fields -->
+            <div class="row">
+                
+                <!-- Staff Selection -->
+                <div class="col-md-3 mb-3">
+                    <label for="staff" class="form-label">Staff</label>
+                    <x-select id="staff" class="form-select" 
+                        x-value-id="{{staff}}" x-value-disp="{{staff}}" 
+                        x-name-id="staff" x-name-disp="staff">
+                        <option value="" disabled selected>Select Staff </option>
+                        <option value="Anna Brown">Anna Brown</option>
+                        <option value="Tom Green">Tom Green</option>
+                        <option value="Michael Johnson">Michael Johnson</option>
+                        <option value="Emily Davis">Emily Davis</option>
+                        <option value="Sarah Johnson">Sarah Johnson</option>
+                    </x-select>
+                </div>
+
+                <!-- Activity Name -->
+                <!-- <div class="col-md-3 mb-3"> -->
+                    <!-- <label for="activityName" class="form-label">Activity Name</label> -->
+                    <!-- <input type="text" class="form-control" id="activityName" value="{{activity_name}}"  -->
+                        <!-- placeholder="Enter activity name" name="activity_name"> -->
+                <!-- </div> -->
+				
+				<div class="col-md-3 mb-3">
+					<label for="metricname" class="form-label">Metric Name</label>
+					<x-select id="metricname" class="form-select" 
+						x-value-id="{{ metric_name }}" x-value-disp="{{ metric_name }}" 
+						x-name-id="metric_name" x-name-disp="metric_name">
+						<option value="" disabled selected>Select Metric</option>
+						<option value="Calf Birth Rate">Calf Birth Rate</option>
+						<option value="Farmer Training Sessions">Farmer Training Sessions</option>
+						<option value="Feed Consumption">Feed Consumption</option>
+						<option value="Milk Production">Milk Production</option>
+						<option value="Veterinary Visits">Veterinary Visits</option>
+					</x-select>
+				</div>
+
+
+				
+				
+				<!-- Village Selection -->
+                <div class="col-md-3 mb-3">
+                    <label for="village" class="form-label">Village</label>
+                    <x-select id="village" class="form-select" 
+                        x-value-id="{{village_id}}" x-value-disp="{{village_name}}" 
+                        x-name-id="village_id" x-name-disp="village_name">
+                        <option value="" disabled selected>Select Village</option>
+                        <option value="Jakkur">Jakkur</option>
+                        <option value="Lavale">Lavale</option>
+                        <option value="Kallar">Kallar</option>
+                        <option value="Keezhmad">Keezhmad</option>
+                        <option value="Pratapnagar">Pratap Nagar</option>
+                    </x-select>
+                </div>
+
+                <!-- Start Date -->
+                <div class="col-md-3 mb-3">
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <input type="date" class="form-control" id="startDate" value="{{start_date}}" name="start_date">
+                </div>
+
+                <!-- End Date -->
+                <div class="col-md-3 mb-3">
+                    <label for="endDate" class="form-label">End Date</label>
+                    <input type="date" class="form-control" id="endDate" value="{{end_date}}" name="end_date">
+                </div>
+
+                <!-- Count of People -->
+                <!-- <div class="col-md-3 mb-3"> -->
+                    <!-- <label for="countOfPeople" class="form-label">Count of People</label> -->
+                    <!-- <input type="number" class="form-control" id="countOfPeople" value="{{count_of_people}}"  -->
+                        <!-- placeholder="Enter number of people" name="count_of_people"> -->
+                <!-- </div> -->
+
+			<div class="col-4">
+			  <label for="metactualvalue" class="form-label">Actual Value</label>
+			  <input type="number" class="form-control" id="metactualvalue" name="met_actual_value" placeholder="">
+			</div>
+			
+			<div class="col-4">
+				<label for="mettargetunit" class="form-label">Metric Unit</label>
+				<input type="text" class="form-control" id="mettargetunit" name="met_target_unit">
+			</div>
+                
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

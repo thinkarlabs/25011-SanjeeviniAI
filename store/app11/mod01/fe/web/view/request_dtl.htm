@@ -1,0 +1,58 @@
+{% extends "app11/fe/main/lib/admin_base.htm" %}
+
+{% block body %}
+<div id="x-main" class="container-full" style="margin-top:40px">
+  <!-- Card Header -->
+  <div class="card-header d-flex justify-content-between align-items-center" style="height:45px">
+    <h5 class="ps-2 mb-0">Request Detail</h5>
+    <div>
+      <button type="button" id="btnCancel" class="btn btn-primary btn-sm ms-2">Close</button>
+      <button type="submit" id="btnSave" class="btn btn-success btn-sm ms-2">Save</button>
+    </div>
+  </div>
+
+  <!-- Card Body -->
+  <div class="card-body">
+    <form method="post" id="form_request">
+      <input type="hidden" class="form-control" value="{{ ses.user.hub_id }}" name="hub_id">
+
+      <!-- Row for Phone Number and Request Date -->
+      <div class="row mb-3">
+        <!-- Phone Number Input -->
+        <div class="col-md-6">
+          <label for="phone_number" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="phone_number" name="phone_number" 
+                 placeholder="Enter the phone number" oninput="updateFarmerName(this.value)">
+          <div class="mt-2">
+            <span id="farmer_label" class="text-dark">Unknown Farmer</span>
+          </div>
+        </div>
+
+        <!-- Request Date Input -->
+        <div class="col-md-6">
+          <label for="requestDate" class="form-label">Request Date</label>
+          <input type="date" class="form-control" id="requestDate" name="request_date" value="{{ request_date }}">
+        </div>
+      </div>
+
+      <!-- Staff Selection Section -->
+      <div class="row mb-6">
+        <div class="col-md-6">
+          <label for="maitristaff" class="form-label">Mairti Staff</label>
+          <x-select id="maitristaff" class="form-select" 
+                    x-value-id="{{maitristaff_id}}" x-value-disp="{{maitristaff_name}}" 
+                    x-name-id="maitristaff_id" x-name-disp="fmaitristaff_name">
+            <option value="">Select Mairti Staff</option>
+            <option value="Anna Brown">Anna Brown</option>
+            <option value="TomGreen">Tom Green</option>
+            <option value="Michael Johnson">Michael Johnson</option>
+            <option value="Emily Davis">Emily Davis</option>
+            <option value="Sarah Johnson">Sarah Johnson</option>
+          </x-select>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+{% endblock %}

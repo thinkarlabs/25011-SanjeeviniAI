@@ -1,0 +1,47 @@
+{% extends "app11/fe/main/lib/admin_base.htm" %}
+
+{% block body %}
+<div id='x-main' class="container-full" style="margin-top:40px">
+
+  <div class="card-header d-flex justify-content-between align-items-center" style="height:45px">
+    <h5 class="ps-2 mb-0">Cattle Detail</h5>
+    <div>
+      <button type="button" id="btnCancel" class="btn btn-primary btn-sm ms-2">Close</button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <form method="post" id="cattle_form">
+
+      <!-- Farmer Name -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="farmer" class="form-label">Farmer Name</label>
+          <input type="text" class="form-control" id="farmer" value="Ajay Kumar" readonly>
+        </div>
+
+        <!-- Cattle Title -->
+        <div class="col-md-6">
+          <label for="cattle_name" class="form-label">Cattle Title</label>
+          <input type="text" class="form-control" id="cattle_name" value="Jolly Cow" readonly>
+        </div>
+      </div>
+
+      <!-- Cattle Tag Number & Cattle Type -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="cattle_tage_number" class="form-label">Cattle Tag Number</label>
+          <input type="text" class="form-control" id="cattle_tage_number" value="CT12345" readonly>
+        </div>
+
+        <div class="col-md-6">
+          <label for="cattle_type" class="form-label">Cattle Type</label>
+          <input type="text" class="form-control" id="cattle_type" value="Cow" readonly>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+{% endblock %}

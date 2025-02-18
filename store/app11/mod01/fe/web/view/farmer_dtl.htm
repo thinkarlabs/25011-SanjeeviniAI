@@ -1,0 +1,67 @@
+{% extends "app11/fe/main/lib/admin_base.htm" %}
+
+{% block body %}
+<div id="x-main" class="container-full" style="margin-top: 40px">
+  <!-- Header -->
+  <div class="card-header d-flex justify-content-between align-items-center" style="height: 45px">
+    <h5 class="ps-2 mb-0">Farmer Detail</h5>
+    <div>
+      <button type="button" id="btnCancel" class="btn btn-primary btn-sm ms-2">Close</button>
+    </div>
+  </div>
+
+  <!-- Form Body -->
+  <div class="card-body">
+    <form id="form_donor">
+
+      <div class="row g-3">
+          <!-- Farmer Name & Aadhaar Number -->
+          <div class="col-md-6">
+            <label class="form-label">Farmer Name</label>
+            <input type="text" class="form-control" value="Ramesh Yadav" readonly>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Aadhaar Number</label>
+            <input type="text" class="form-control" value="***-****-9012" readonly>
+          </div>
+
+          <!-- Pin Code -->
+          <div class="col-md-6">
+            <label class="form-label">Pin Code</label>
+            <input type="text" class="form-control" value="560064" readonly>
+          </div>
+
+          <!-- Village & Phone Number -->
+          <div class="col-md-6">
+            <label class="form-label">Village</label>
+            <input type="text" class="form-control" value="Rampur, Uttar Pradesh" readonly>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone Number</label>
+            <input type="text" class="form-control" value="9876543210" readonly>
+          </div>
+
+          <!-- Cattle Count & Type of Fodder -->
+          <div class="col-md-6">
+            <label class="form-label">Count of Cattle</label>
+            <input type="number" class="form-control" value="25" readonly>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Type of Fodder</label>
+            <input type="text" class="form-control" value="Green Fodder" readonly>
+          </div>
+
+          <!-- Shed Type & Milk Production -->
+          <div class="col-md-6">
+            <label class="form-label">Type of Shed</label>
+            <input type="text" class="form-control" value="Open Shed" readonly>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Milk Production (Liters)</label>
+            <input type="number" class="form-control" value="120" readonly>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

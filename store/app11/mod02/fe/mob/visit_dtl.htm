@@ -1,0 +1,121 @@
+{% extends "app11/fe/main/lib/base_mob.htm" %}
+
+{% block body %}
+<div id="x-main" class="container-full" style="margin-top: 40px">
+
+  <!-- Card Header -->
+  <div class="card-header d-flex justify-content-between align-items-center" style="height: 60px">
+    <h5 class="ps-2 mb-0">Visit Detail</h5>
+    <div>
+      <button type="button" id="btnCancel" class="btn btn-primary btn-sm ms-2">Close</button>
+      <button type="submit" form="visit_form" id="btnSave" class="btn btn-success btn-sm ms-2">Save</button>
+    </div>
+  </div>
+
+  <!-- Card Body -->
+  <div class="card-body">
+    <form method="post" id="visit_form">
+
+      <!-- Visit Information Card -->
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <div class="card p-3" style="background-color: #f9f9f9; border: 1px solid #ddd;">
+            <p class="mb-1" style="color: #333;">
+              <strong>Phone:</strong> 9876543210 <br>
+              <strong>Farmer Name:</strong> Sunil Patel <br>
+              <strong>Request Date:</strong> 14-08-2002 <br>
+              <strong>Pin Code:</strong> 560064 <br>
+              <strong>Village Name:</strong> Jakkur
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cattle Details -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="cattle_title" class="form-label mb-1">Cattle Title</label>
+          <select class="form-select" name="cattle_title_name" id="cattle_title_name">
+            <option value="" disabled selected>Select Cattle Title</option>
+            <option value="bessie">Bessie</option>
+            <option value="daisy">Daisy</option>
+            <option value="lily">Lily</option>
+            <option value="buttercup">Buttercup</option>
+            <option value="rose">Rose</option>
+          </select>
+        </div>
+
+        <!-- Veterinary & AI Details -->
+        <div class="col-md-6">
+          <label for="sperm_type" class="form-label mb-1">Sperm Type</label>
+          <select id="sperm_type" class="form-select" name="sperm_type">
+            <option value="" disabled selected>Select Sperm Type</option>
+            <option value="hf">HF</option>
+            <option value="mr">MR</option>
+            <option value="sh">SH</option>
+            <option value="jr">JR</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="sperm_tube_id" class="form-label mb-1">Sperm Tube ID</label>
+          <input type="text" class="form-control" id="sperm_tube_id" name="sperm_tube_id" placeholder="Enter the sperm tube ID">
+        </div>
+
+        <div class="col-md-6">
+          <label for="vet_hospital" class="form-label mb-1">Veterinary Hospital</label>
+          <select class="form-select" id="vet_hospital" name="vet_hospital">
+            <option value="" disabled selected>Select Veterinary Hospital</option>
+            <option value="AnimalCare">Animal Care Veterinary Hospital</option>
+            <option value="BanfieldPet">Banfield Pet Hospital</option>
+            <option value="BluePearl">BluePearl Veterinary Partners</option>
+            <option value="MedVet">MedVet</option>
+            <option value="PetVet">PetVet Animal Hospital</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="visit_date" class="form-label mb-1">Visit Date</label>
+          <input type="date" class="form-control" id="visit_date" name="visit_date" value="{{visit_date}}" placeholder="Enter the visit date">
+        </div>
+		
+		<div>
+			<button class="btn rounded-0">
+				<video id="video" style="display:none; width:175px; height:175px;"></video>
+				<img id="photo" style="width:175px; height:175px;" class="card-img-top img-fluid rounded-circle" alt="Capture">
+			</button>
+
+			<div class="camera mt-2">
+				<button id="startcam" type="button" onclick="startCamAndCapture()">Capture</button>
+				<button id="takepic" type="button" style="display:none;" onclick="takePic()">Take Capture</button>
+			</div>
+
+			<canvas id="canvas" style="display:none;"></canvas>
+
+			<div class="col-3" style="display: none;">
+				<label for="mem_pic">Photo</label>
+				<input type="text" class="form-control mt-2" id="mem_pic">
+			</div>
+
+			<!-- Location display (Label instead of input) -->
+			<div id="locationFields" style="display: none;">
+				<label>Latitude: <span id="loc_lat"></span></label><br>
+				<label>Longitude: <span id="loc_lon"></span></label>
+			</div>
+
+			<!-- Date & Time display -->
+			<div class="mt-2">
+				<label>Captured Date & Time: <span id="capture_datetime"></span></label>
+			</div>
+		</div>
+
+		
+		
+		
+
+      </div>
+    </form>
+  </div>
+
+</div>
+{% endblock %}

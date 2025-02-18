@@ -1,0 +1,172 @@
+{% extends "app11/fe/main/lib/admin_base.htm" %}
+
+{% block body %}
+<div id="x-main" class="container-full" style="margin-top: 40px;">
+    <div class="card-header d-flex align-items-center justify-content-between" style="height: 45px;">
+        <h5 class="ps-2">Staff Detail</h5>
+        <div>
+            <button type="button" id="btnCancel" class="btn btn-primary btn-sm ms-2">Close</button>
+            <button type="button" id="btnSave" class="btn btn-success btn-sm ms-2">Save</button>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <form method="post" id="form_donor">
+            <!-- Hidden input for Hub ID -->
+            <input type="hidden" class="form-control" value="{{ses.user.hub_id}}" name="hub_id">
+
+            <!-- Name, Staff, Phone Number, Email, Password -->
+            <div class="row">
+                <div class="col-3 mb-3">
+                    <label for="staff_name">Name</label>
+                    <input type="text" class="form-control mt-2" id="assignPersonName" value="{{staff_name}}" placeholder="Enter name" name="staff_name">
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="staff_type" class="form-label">Staff Type</label>
+                    <x-select id="staff_type" class="form-select" 
+                        x-value-id="{{staff_type_id}}" x-value-disp="{{staff_type}}" 
+                        x-name-id="staff_type_id" x-name-disp="staff_type">
+                        <option value="">Select Staff Type</option>
+						 <option value="maitriworker">Maitri Worker</option>
+                        <option value="myradateam">Myrada Team</option>
+                        <option value="Paravet">Paravet</option>
+                        <option value="Farmer">Farmer</option>
+                       
+                    </x-select>
+                </div>
+
+                <div class="col-3 mb-3">
+                    <label for="phone_num">Phone Number</label>
+                    <input type="text" class="form-control mt-2" id="phone_num" value="{{phone_num}}" placeholder="Enter Phone Number" name="phone_num">
+                </div>
+
+                <div class="col-3 mb-3">
+                    <label for="email">Email ID</label>
+                    <input type="email" class="form-control mt-2" id="contact_email" value="{{email}}" placeholder="Enter email ID" name="email">
+                </div>
+
+                <div class="col-3 mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control mt-2" id="password" value="{{password}}" placeholder="Enter password" name="password">
+                </div>
+            </div>
+
+            <!-- Location Details Section -->
+            <div class="row mt-4">
+                <div class="col-12 mb-3">
+                    <h5>Location Details</h5>
+                </div>
+
+                <!-- State, District, Taluk, Village with Add button -->
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="stateSelect">State</label>
+                        <x-select id="stateSelect" class="form-select">
+                            <option value=''>Select a State...</option>
+                            <option value='Karnataka'>Karnataka</option>
+                            <option value='Maharashtra'>Maharashtra</option>
+                            <option value='Tamil Nadu'>Tamil Nadu</option>
+                            <option value='Kerala'>Kerala</option>
+                            <option value='Rajasthan'>Rajasthan</option>
+                        </x-select>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <label for="districtSelect">District</label>
+                        <x-select id="districtSelect" class="form-select">
+                            <option value=''>Select a District...</option>
+                            <option value='Bangalore'>Bangalore</option>
+                            <option value='Pune'>Pune</option>
+                            <option value='Coimbatore'>Coimbatore</option>
+                            <option value='Ernakulam'>Ernakulam</option>
+                            <option value='Jaipur'>Jaipur</option>
+                        </x-select>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <label for="talukSelect">Taluk</label>
+                        <x-select id="talukSelect" class="form-select">
+                            <option value=''>Select a Taluk...</option>
+                            <option value='Yelahanka'>Yelahanka</option>
+                            <option value='Mulshi'>Mulshi</option>
+                            <option value='Mettupalayam'>Mettupalayam</option>
+                            <option value='Aluva'>Aluva</option>
+                            <option value='Sanganer'>Sanganer</option>
+                        </x-select>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <label for="villageSelect">Village</label>
+                        <x-select id="villageSelect" class="form-select">
+                            <option value=''>Select a Village...</option>
+                            <option value='Jakkur'>Jakkur</option>
+                            <option value='Lavale'>Lavale</option>
+                            <option value='Kallar'>Kallar</option>
+                            <option value='Keezhmad'>Keezhmad</option>
+                            <option value='Pratap Nagar'>Pratap Nagar</option>
+                        </x-select>
+                    </div>
+
+                    <!-- Add button placed after Village input in the same row -->
+                    <div class="col-md-12 d-flex justify-content-end">
+                        <button id="btnAdd" class="btn btn-primary btn-sm">+</button>
+                    </div>
+					
+					
+                </div>
+            </div>
+
+            <!-- Table displaying location details -->
+            <table class="table table-sm table-striped" id="tbl_location">
+                <thead>
+                    <tr>
+                        <th scope="col">State</th>
+                        <th scope="col">District</th>
+                        <th scope="col">Taluk</th>
+                        <th scope="col">Village</th>
+                        <th scope="col" style="width:60px">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Karnataka</td>
+                        <td>Bangalore</td>
+                        <td>Yelahanka</td>
+                        <td>Jakkur</td>
+                        <td><button class="btn btn-danger btn-sm">X</button></td>
+                    </tr>
+                    <tr>
+                        <td>Maharashtra</td>
+                        <td>Pune</td>
+                        <td>Mulshi</td>
+                        <td>Lavale</td>
+                        <td><button class="btn btn-danger btn-sm">X</button></td>
+                    </tr>
+                    <tr>
+                        <td>Tamil Nadu</td>
+                        <td>Coimbatore</td>
+                        <td>Mettupalayam</td>
+                        <td>Kallar</td>
+                        <td><button class="btn btn-danger btn-sm">X</button></td>
+                    </tr>
+                    <tr>
+                        <td>Kerala</td>
+                        <td>Ernakulam</td>
+                        <td>Aluva</td>
+                        <td>Keezhmad</td>
+                        <td><button class="btn btn-danger btn-sm">X</button></td>
+                    </tr>
+                    <tr>
+                        <td>Rajasthan</td>
+                        <td>Jaipur</td>
+                        <td>Sanganer</td>
+                        <td>Pratap Nagar</td>
+                        <td><button class="btn btn-danger btn-sm">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+{% endblock %}

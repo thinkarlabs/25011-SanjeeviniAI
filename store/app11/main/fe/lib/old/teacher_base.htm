@@ -1,0 +1,50 @@
+{% block topheader %}
+<div id='x-header'>
+<nav class="navbar navbar-expand navbar-dark fixed-top bg-success p-1" style="height: 42px;">
+    <div class="nav-header">
+        <img class="p-1" style="height: 40px;" src="/app00/fe/web/mod00/site00/_res/logo.png"></img>			        
+		<span class="d-md-inline text-white" id="net_name">Education Hub</span> </div>
+        <!--<a class="navbar-toggler-icon sidebar-toggle d-md-none" href="#" id="showsidebar" data-toggle="sidebar" aria-label="Hide Sidebar"></a>-->
+   
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" data-nav='store.teach_book_lst'>Catalog</a>
+                </li>
+				
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/web/connect">
+                    <span class="nav-link-title">
+                      <i class="ti ti-24-hours"></i> Logout
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+	{% block subheader %}
+	
+	{% endblock %}
+</div>	
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}
+
+{% block footer %}
+<footer class="navbar navbar-expand navbar-dark fixed-bottom bg-dark p-1" style="height:30px">
+  <div class="w-100">
+	<p class="text-light mt-3 float-start ps-3">&copy; Powered by Thinkar Labs</p>
+	<p class="text-light mt-3 float-end pe-3">{{ses.user.name}} | {{ses.user.org_name}}</p>
+  </div>
+</footer>
+{% endblock %}
+
+

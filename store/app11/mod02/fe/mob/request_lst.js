@@ -1,7 +1,7 @@
 _cp = _app.curr_page
 
 _cp.init = function(){
-	_cp.views.page = './fe/app11/mod02/mob/request_lst.htm';
+	_cp.views.page = './app11/fe/mod02/mob/request_lst.htm';
 	_cp.api.list = '/app03/api/mod02/ang_pg/';
 	
 	//Render the page.

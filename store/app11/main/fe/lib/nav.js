@@ -1,9 +1,11 @@
 let navMap = {
+  "store.usr_login": "/fe/app11/web/login.js",
+
   "store.activity_lst": "/app11/fe/mod01/web/activity/activity_lst.js",
   "store.activity_dtl": "/app11/fe/mod01/web/activity/activity_dtl.js",
   "store.staff_lst": "/app11/fe/mod01/web/staff/staff_lst.js",
   "store.staff_dtl": "/app11/fe/mod01/web/staff/staff_dtl.js",
-  "store.location_lst": "/app11/fe/mod01/web/location/location_lst.js",
+  "store.location_lst": "/fe/app11/mod01/web/location/location_lst.js",
   "store.location_dtl": "/app11/fe/mod01/web/location/location_dtl.js",
   "store.farmer_lst": "/app11/fe/mod01/web/view/farmer_lst.js",
   "store.farmer_dtl": "/app11/fe/mod01/web/view/farmer_dtl.js",
@@ -27,7 +29,7 @@ let navMap = {
   
   "mob.farmer_lst": "/app11/fe/mod02/mob/farmer_lst.js",
   "mob.farmer_dtl": "/app11/fe/mod02/mob/farmer_dtl.js",
-  "mob.request_lst": "/fe/app11/mod02/mob/request_lst.js",
+  "mob.request_lst": "/app11/fe/mod02/mob/request_lst.js",
   "mob.request_dtl": "/app11/fe/mod02/mob/request_dtl.js",
   "mob.cattle_lst": "/app11/fe/mod02/mob/cattle_lst.js",
   "mob.cattle_dtl": "/app11/fe/mod02/mob/cattle_dtl.js",

@@ -2,14 +2,14 @@ _cp = _app.curr_page
 
 _cp.init = function(){
 	//Define the page URL and the base API
-	_cp.views.page = './app11/fe/mod01/web/location/location_lst.htm';	
-	_cp.api.list = '/app03/api/mod01/program/';
+	_cp.views.page = './fe/app11/mod01/web/location/location_lst.htm';	
+	// _cp.api.list = '/app03/api/mod01/program/';
 
 	//Render the page.
 	_cp.render_page(_cp.views.page,'');	
 	
 	//Call the filter to get the data.
-	 _cp.on.filter_list();	
+	 // _cp.on.filter_list();	
 
 	//Bind events for add and search. 
 	//NOTE : Events for edit and delete are defined in their respective onclick events in the view.

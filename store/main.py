@@ -28,6 +28,9 @@ async def read_SanjeeviniAI(request: Request):
     return FileResponse(fname)
 
 
+
+
+print("HELLO WORLD")
 '''    
 @x_app.get("/web/connect")
 async def read_main(request: Request): 
